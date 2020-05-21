@@ -2,7 +2,7 @@
 2020-05-21
 
 ## Installation Instructions
-If you prefer not to compile the code then retrieve the zipped file [Rotate.Pictures.zip](https://github.com/avifarah/RotatePictures/commit/97244916585071e4207366c8cee07f00a46a34f8).  Unzip it and make the appropriate modifications to the configuration file (Rotate.Pictures.config).  That's it.  The code will work on the .Net Framework 4.8.  So if you prefer to use the code without compiling it and you do not have the .Net Framework 4.8 then you will need to install the .Net Framework 4.8 (see: [.Net Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48)).
+If you prefer **not** to compile the code then retrieve the zipped file [Rotate.Pictures.zip](https://github.com/avifarah/RotatePictures/commit/97244916585071e4207366c8cee07f00a46a34f8).  Unzip it and make the appropriate modifications to the configuration file (Rotate.Pictures.config) as per below.  That's it.  The code will work with .Net Framework 4.8.  So if you prefer to use the code without the compilation step and if you do not have the .Net Framework 4.8 installed then you will need to install the .Net Framework 4.8 (see: [.Net Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48) for installation instructions).
 
 On the other hand if you wish to compile the source code yourself, then get the source code and compile it, preferably in Release mode.
 
