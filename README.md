@@ -11,7 +11,9 @@ Code targets .Net Framework 4.8.  You may change the target framework if you do 
 
 Now that your code is compiled copy the contents of the bin/Release (or bin/Debug) into the machine/directory where you wish to run it from.
 
-Your last step is the modify the configuration file, Rotate.Pictures.exe.config:
+Your last step is the modify the configuration file: ```Rotate.Pictures.exe.config```.
+
+## Modification of the configuration file: ```Rotate.Pictures.exe.config```
 
 In the appSettings section of the configuration file, change the following entries:
 - key="Initial Folders"
@@ -29,7 +31,7 @@ In the appSettings section of the configuration file, change the following entri
 
 The value part of the entry should contain the directory where the pictures are.  Do not worry about subdirectories, the software will crawl through the subdirectories and look for pictures, then display them in a random rotating fashion.
 
-If your pictures are spread over multiple directories, then separate them with a semicolon.  So, if you have pictures in the following directories: “C:\MyPictures”, “D:\YourPictures” and “C:\RandomDirectory\FarOut\FunnyPics” then the **Initial Folders** entry will look like:
+If your pictures are spread over multiple directories, then separate the directories with a semicolon.  So if, for example, you have pictures in the following directories: “C:\MyPictures”, “D:\YourPictures” and “C:\RandomDirectory\FarOut\FunnyPics” then the **Initial Folders** entry will look like:
 
 ```<add key="Initial Folders" value=" C:\MyPictures;D:\YourPictures;C:\RandomDirectory\FarOut\FunnyPics" />```
 
@@ -42,3 +44,21 @@ If your pictures are spread over multiple directories, then separate them with a
 ```
 
 ![Example of running program](https://github.com/avifarah/RotatePictures/blob/master/Annotation%202020-05-21%20003603.png)
+
+Bottom most, left most "<" button will allow you to go back through the pictures that were just displayed.  The **Max picture tracker depth** will control how many pictures you may go back from the current picture.  Default is 1,000.
+
+- **Still pictures** and **Motion pictures** 
+
+```
+<!-- These are the only extensions that the system will consider.  
+			Extensions are semicolon separated.
+			Extensions must start with a period (".").  -->
+<add key="Still pictures" value=".jpg;.bmp;.gif;.png;.psd;.tif" />
+<add key="Motion pictures" value=".mov;.avi;.mpg;.mp4;.wmv;.3gp" />
+```
+
+Still pictures will display the picture for a fixed amount of time, motion pictures will display more controls and will run the motion picture for this same amount of time.  If you need more time to watch the (motion picture) video then select the picture itself or the green circle at the bottom line.  The green circle will turn red and you can view the video with no time limit.
+
+The entries for both **still/motion pictures** are that of the extensions associated with these files.  For a file to be considered as either still picture or motion picture it will need to appear in either of the configuration entries.
+
+
