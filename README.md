@@ -39,4 +39,4 @@ If your pictures are spread over multiple directories, then separate them with a
 <add key="Max picture tracker depth" value="1000" />
 ```
 
-[Example of running program]("M:\Pictures\2020-05-19 Avi Cell\Annotation 2020-05-21 003603.png")
+![Example of running program]("M:\Pictures\2020-05-19 Avi Cell\Annotation 2020-05-21 003603.png")
