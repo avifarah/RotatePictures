@@ -136,3 +136,44 @@ While viewing pictures you see a picture that you wish not to view again.  Out o
 ### Remark
 Since only picture index is added to the list, if you add or remove pictures to the list or to the **Initial Folders**, then you may care to empty this entry out, since it is no longer accurate.
 
+## Logging
+I have set logging throughout the running of the program.  You may decide to keep the logging or disable it.  See the **log4net** section of the configuration file:
+```
+<log4net>
+	<appender name="Console" type="log4net.Appender.ConsoleAppender">
+		<layout type="log4net.Layout.PatternLayout">
+			<conversionPattern value="%5level - %message%newline" />
+		</layout>
+	</appender>
+	<appender name="AppRollingFile" type="log4net.Appender.RollingFileAppender">
+		<!-- Set the value to the directory where you care for messages to go into.
+			The %date{yyyyMMdd} translates to the date value, 4 digit year,
+			2 digit month and 2 digit day.  Date value when the program started
+			executing -->
+		<file type="log4net.Util.PatternString" value="C:\Users\avi_f\AppData\Local\Temp\Logs\RotatePictures\RotatePictures.%date{yyyyMMdd}.log" />
+		<lockingModel type="log4net.Appender.FileAppender+MinimalLock" />
+		<appendToFile value="true" />
+		<rollingStyle value="Composite" />
+		<maximumFileSize value="3MB" />
+		<maxSizeRollBackups value="15" />
+		<layout type="log4net.Layout.PatternLayout">
+			<conversionPattern value="%-5level [%thread] (%file:%line) [%d{yyyy-MM-dd HH:mm:ss.fff}] %message%newline" />
+		</layout>
+	</appender>
+	<root>
+		<level value="ALL" />
+		<appender-ref ref="Console" />
+		<appender-ref ref="AppRollingFile" />
+	</root>
+</log4net>
+```
+
+In order to disable the logging remove the line ```<appender-ref ref="AppRollingFile" />``` or set the **value** in: ```<file type="log4net.Util.PatternString" value="C:\Users\avi_f\AppData\Local\Temp\Logs\RotatePictures\RotatePictures.%date{yyyyMMdd}.log" />``` to an empty string.
+
+However, I will discourage you from doing so.  In case of an issue you may wish you had the logging set to a real file.  Otherwise, I log little.
+
+In order to set the log find out what is your temporary directory (in the file explorer, enter “%temp% in the address bar and let it translate to a full path).  On my machine %temp% translates to ```“C:\Users\avi_f\AppData\Local\Temp”```.  Take the path for the %temp% directory and append to it: ```\Logs\RotatePictures\RotatePictures.%date{yyyyMMdd}.log```, then enter it into the **value** part of: ```<file type="log4net.Util.PatternString" value="..." />```.
+
+Thank you for using the application.
+
+Avi Farah
