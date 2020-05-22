@@ -131,7 +131,7 @@ Viewing the above depiction showing a video display, you see, at the top of the 
 ```
 <add key="Pictures Indices To Avoid.  Comma separated" value=""/>
 ```
-While viewing pictures you see a picture that you wish not to view again.  Select the ![No Entry]( https://github.com/avifarah/RotatePictures/blob/master/Annotation%202020-05-21%20192359.png) icon, at the bottom right of the display, then your picture index will be added to the list.
+While viewing pictures you see a picture that you wish not to view again.  Out of the bottom right icons of the above depiction, select the left icon ![bottom right icons]( https://github.com/avifarah/RotatePictures/blob/master/Annotation%202020-05-21%20200356.png) and your picture index will be added to the list.
 
 ### Remark
 Since only picture index is added to the list, if you add or remove pictures to the list or to the **Initial Folders**, then you may care to empty this entry out, since it is no longer accurate.
